@@ -33,6 +33,7 @@ typedef unsigned long long ull;
 #define    mp     make_pair
 #define    pb     push_back
 #define    error  cout<<-1<<nl
+#define REP(i,a,b) for (int i = a; i <= b; i++)
 void solve()
 {
   ll x ,y;
