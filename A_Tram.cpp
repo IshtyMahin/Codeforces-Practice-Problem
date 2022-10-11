@@ -9,7 +9,7 @@ int main(){
     for(int i =0; i<t;i++){
         int a,b;
         cin>>a>>b;
-        total=(total + b -a);
+        total=(total + a -b);
         maxi = max(maxi,total);
         
     }
