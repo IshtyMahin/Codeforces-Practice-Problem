@@ -1,1 +1,1 @@
-{"name":"Local: temp","url":"e:\\codeForces\\practice_problem\\temp.cpp","tests":[{"id":1662110219835,"input":"6\n2 2 1 3 4 1\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\codeForces\\practice_problem\\temp.cpp","group":"local","local":true}
+{"name":"Local: temp","url":"e:\\codeForces\\practice_problem\\temp.cpp","tests":[{"id":1662110219835,"input":"6\n2 2 1 3 4 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\codeForces\\practice_problem\\temp.cpp","group":"local","local":true}

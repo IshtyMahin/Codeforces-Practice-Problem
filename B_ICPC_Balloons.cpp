@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+template<typename typC> istream &operator>>(istream &cin,vector<typC> &a) { for (auto &x:a) cin>>x; return cin; }
 typedef long long ll;
 typedef unsigned long long ull;
 #define max3(a,b,c) max(a,max(b,c))
@@ -35,13 +36,19 @@ typedef unsigned long long ull;
 #define    error  cout<<-1<<nl
 void solve()
 {
-  ll a,b,c;
-  cin>>a>>b>>c;
-  cout<<max3(a,b,c)<<" eh o maior"<<endl;
+  ll n;
+  cin>>n;
+  string s;
+  cin>>s;
+  set<char> ar;
+  ar.insert(s.begin(),s.end());
+  ll p = ar.size();
+  cout<<p*2+(n-p);
+  nl;
 }
 int main()
 {
-    
+    tst {
         solve();
-    
+    }
 }
