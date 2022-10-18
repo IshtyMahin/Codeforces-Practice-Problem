@@ -1,5 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
+template <typename typC>
+istream &operator>>(istream &cin, vector<typC> &a)
+{
+    for (auto &x : a)
+        cin >> x;
+    return cin;
+}
 typedef long long ll;
 typedef unsigned long long ull;
 #define max3(a, b, c) max(a, max(b, c))
@@ -10,10 +17,10 @@ typedef unsigned long long ull;
 #define no cout << "NO" << endl
 #define nl cout << endl
 #define tr ios::sync_with_stdio(false), cin.tie(0), cout.tie(0)
-#define tst  \
-   int t;    \
-   cin >> t; \
-   while (t--)
+#define tst   \
+    int t;    \
+    cin >> t; \
+    while (t--)
 #define Max 1000000000000000014
 #define Min -1000000000000000014
 #define PI 3.1415926535897
@@ -22,10 +29,10 @@ typedef unsigned long long ull;
 #define all(v) v.begin(), v.end()
 #define mem(a, v) memset(a, v, sizeof(a))
 #define space ' '
-#define COUT(v)            \
-   for (auto it : v)       \
-      cout << it << space; \
-   cout << nl;
+#define COUT(v)              \
+    for (auto it : v)        \
+        cout << it << space; \
+    cout << nl;
 #define vi vector<int>
 #define vl vector<ll>
 #define si set<int>
@@ -39,37 +46,24 @@ typedef unsigned long long ull;
 #define mp make_pair
 #define pb push_back
 #define error cout << -1 << nl
-#define REP(i, a, b) for (int i = a; i <= b; i++)
 void solve()
 {
-   ll n;
-   cin >> n;
-   ll a[n];
-   ll c = 0;
-   ll b[2] = {1, 1};
-   for (ll i = 0; i < n; i++)
-   {
-      cin >> a[i];
-   }
+    ll x, y;
+    ll a, b;
+    cin >> x >> y >> a >> b;
+    ll p;
+
    
-   for (ll i = 0; i < n; i++)
-   {
-      if (a[i] != i + 1)
-      {
-         b[c] = i+1;
-         c++;
-      }
-   }
-   sort(b,b+2);
-   if(c>2){
-      cout<<"no";
-   }
-   else{
-      cout<<"yes"<<endl;
-      cout<<b[0]<<" "<<b[1];
-   }
+    p = a * abs(x - y);
+  ll q= min(x,y);
+   p = p+ min(q*b , q*2*a);
+
+    cout << p << endl;
 }
 int main()
 {
-   solve();
+    tst
+    {
+        solve();
+    }
 }
