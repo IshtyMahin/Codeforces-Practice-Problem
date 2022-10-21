@@ -4,6 +4,7 @@ char c;
 int a, b, color;
 int main()
 {
+
     cin >> a >> b;
     for (int i = 0; i < a; i++)
     {
