@@ -6,8 +6,8 @@ typedef unsigned long long ull;
 #define max4(a,b,c,d)   max(a,max(b,max(c,d)))
 #define min3(a,b,c) min(a,min(b,c))
 #define min4(a,b,c,d)   min(a,min(b,min(c,d)))
-#define yes cout<<"YES"<<endl
-#define no  cout<<"NO"<<endl
+#define yes cout<<YES<<endl
+#define no  cout<<NO<<endl
 #define nl  cout<<endl
 #define tr ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)
 #define    tst    int t;cin>>t;while(t--)
@@ -33,27 +33,26 @@ typedef unsigned long long ull;
 #define    mp     make_pair
 #define    pb     push_back
 #define    error  cout<<-1<<nl
+#define REP(i,a,b) for (int i = a; i <= b; i++)
 void solve()
 {
-   ll n;
-   cin>>n;
-   ll a[n];
-   for(ll i = 0; i < n; i++)
-   {
-      cin>>a[i];
-   }
-   sort(a,a+n);
-   if((n==1 && a[0]>1) || n!=1 && a[n-1]>a[n-2]+1){
-    cout<<"NO"<<endl;
-   }
-   else{
-    cout<<"YES"<<endl;
-   }
-   
+  ll n;
+  cin>>n;
+  vl v;
+  for(ll i=0;i<n;i++){
+    ll x;
+    cin>>x;
+    v.push_back(x);
+  }
+  sort(v.begin(),v.end());
+  if(n%2==0){
+     cout<<v[(n/2)-1];
+  }
+  else{
+    cout<<v[(n/2)];
+  }
 }
 int main()
 {
-    tst {
         solve();
-    }
 }

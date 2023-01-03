@@ -1,5 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
+template <typename typC>
+istream &operator>>(istream &cin, vector<typC> &a)
+{
+    for (auto &x : a)
+        cin >> x;
+    return cin;
+}
 typedef long long ll;
 typedef unsigned long long ull;
 #define max3(a, b, c) max(a, max(b, c))
@@ -10,10 +17,10 @@ typedef unsigned long long ull;
 #define no cout << "NO" << endl
 #define nl cout << endl
 #define tr ios::sync_with_stdio(false), cin.tie(0), cout.tie(0)
-#define tst \
-  int t;    \
-  cin >> t; \
-  while (t--)
+#define tst   \
+    int t;    \
+    cin >> t; \
+    while (t--)
 #define Max 1000000000000000014
 #define Min -1000000000000000014
 #define PI 3.1415926535897
@@ -22,10 +29,10 @@ typedef unsigned long long ull;
 #define all(v) v.begin(), v.end()
 #define mem(a, v) memset(a, v, sizeof(a))
 #define space ' '
-#define COUT(v)          \
-  for (auto it : v)      \
-    cout << it << space; \
-  cout << nl;
+#define COUT(v)              \
+    for (auto it : v)        \
+        cout << it << space; \
+    cout << nl;
 #define vi vector<int>
 #define vl vector<ll>
 #define si set<int>
@@ -39,28 +46,31 @@ typedef unsigned long long ull;
 #define mp make_pair
 #define pb push_back
 #define error cout << -1 << nl
+# define FAST ios_base :: sync_with_stdio (false) ; cin.tie(0) ; cout.tie(0)
 void solve()
 {
-  ll n, k, sum = 0, c = 0;
-  cin >> n >> k;
+    int n;
+    ll sum = 0, layer = 8;
+    cin >> n;
+    if (n == 1)
+    {
+        cout << 0 << '\n';
+        return;
+    }
 
-  if (n % 2 == k % 2)
-  {
-    if (k * k > n)
-      no;
-    else
-      yes;
-  }
+    for (int i = 1; i <= n/2;i++)
+    {
+        sum += layer * i;
+        layer += 8;
+    }
 
-  else
-  {
-    no;
-  }
+    cout << sum << '\n';
 }
 int main()
 {
-  tst
-  {
-    solve();
-  }
+     
+    tst
+    {
+        solve();
+    }
 }

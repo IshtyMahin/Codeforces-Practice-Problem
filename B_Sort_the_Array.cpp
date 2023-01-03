@@ -45,29 +45,18 @@ void solve()
    ll n;
    cin >> n;
    ll a[n];
-   ll c = 0;
-   ll b[2] = {1, 1};
+   
+   vector<ll> v;
+   ll c[n];
    for (ll i = 0; i < n; i++)
    {
       cin >> a[i];
+      c[i] = a[i];
    }
+   sort(c, c + n);
+   ll x,y;
+   ll ct = 0;
    
-   for (ll i = 0; i < n; i++)
-   {
-      if (a[i] != i + 1)
-      {
-         b[c] = i+1;
-         c++;
-      }
-   }
-   sort(b,b+2);
-   if(c>2){
-      cout<<"no";
-   }
-   else{
-      cout<<"yes"<<endl;
-      cout<<b[0]<<" "<<b[1];
-   }
 }
 int main()
 {

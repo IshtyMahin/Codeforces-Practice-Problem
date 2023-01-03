@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -6,14 +7,15 @@ typedef unsigned long long ull;
 #define max4(a, b, c, d) max(a, max(b, max(c, d)))
 #define min3(a, b, c) min(a, min(b, c))
 #define min4(a, b, c, d) min(a, min(b, min(c, d)))
-#define yes cout << "YES" << endl
-#define no cout << "NO" << endl
+#define yes cout << YES
+
+#define no cout << NO << endl
 #define nl cout << endl
 #define tr ios::sync_with_stdio(false), cin.tie(0), cout.tie(0)
-#define tst \
-  int t;    \
-  cin >> t; \
-  while (t--)
+#define tst   \
+    int t;    \
+    cin >> t; \
+    while (t--)
 #define Max 1000000000000000014
 #define Min -1000000000000000014
 #define PI 3.1415926535897
@@ -22,10 +24,10 @@ typedef unsigned long long ull;
 #define all(v) v.begin(), v.end()
 #define mem(a, v) memset(a, v, sizeof(a))
 #define space ' '
-#define COUT(v)          \
-  for (auto it : v)      \
-    cout << it << space; \
-  cout << nl;
+#define COUT(v)              \
+    for (auto it : v)        \
+        cout << it << space; \
+    cout << nl;
 #define vi vector<int>
 #define vl vector<ll>
 #define si set<int>
@@ -39,28 +41,44 @@ typedef unsigned long long ull;
 #define mp make_pair
 #define pb push_back
 #define error cout << -1 << nl
+#define REP(i, a, b) for (int i = a; i <= b; i++)
+
 void solve()
 {
-  ll n, k, sum = 0, c = 0;
-  cin >> n >> k;
-
-  if (n % 2 == k % 2)
-  {
-    if (k * k > n)
-      no;
-    else
-      yes;
-  }
-
-  else
-  {
-    no;
-  }
+    ll n, m;
+    cin >> n >> m;
+    map<string, string> s;
+    for (ll i = 0; i < m; i++)
+    {
+        string s1, s2;
+        cin >> s1 >> s2;
+        if (s1.length() > s2.length())
+        {
+            s[s1] = s2;
+        }
+        else
+        {
+            s[s2] = s1;
+        }
+    }
+    
+    for (ll i = 0; i < n; i++)
+    {
+        string s3;
+        cin >> s3;
+        
+        if (s.find(s3)!=s.end())
+        {
+            cout << s[s3] << " ";
+        }
+        else
+        {
+            cout << s3 << " ";
+        }
+    }
 }
 int main()
 {
-  tst
-  {
     solve();
-  }
 }
+

@@ -1,5 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
+template <typename typC>
+istream &operator>>(istream &cin, vector<typC> &a)
+{
+    for (auto &x : a)
+        cin >> x;
+    return cin;
+}
 typedef long long ll;
 typedef unsigned long long ull;
 #define max3(a, b, c) max(a, max(b, c))
@@ -41,24 +48,58 @@ typedef unsigned long long ull;
 #define error cout << -1 << nl
 void solve()
 {
-    ll a, b, c;
-    cin >> a >> b >> c;
-    if (a > b)
-        swap(a, b);
-    if (a > c)
-        swap(a, c);
-    if (b > c)
-        swap(b, c);
+    string s;
+    ll n;
+    cin >> n >> s;
+    ll one1 = 0, zero1 = 0;
+    for (ll i = 0; i < n; i++)
+    {
+        if (s[i] == '0')
+        {
+            zero1++;
+        }
+        else
+        {
+            one1++;
+        }
+    }
 
-    if (b== c)
+    ll one = 0, zero = 0;
+    for (ll i = 0; i < n; i++)
     {
-        yes;
-        cout << a << " " << a << " " << c<<endl;
+        ll cnt = 0;
+        if (s[i] == '0')
+        {
+            while (i < n && s[i] == '0')
+            {
+                i++;
+                cnt++;
+            }
+
+            zero = max(zero, cnt);
+        }
     }
-    else
+    for (ll i = 0; i < n; i++)
     {
-        no;
+        ll cnt = 0;
+        if (s[i] == '1')
+        {
+            {
+                while (i < n && s[i] == '1')
+                {
+                    i++;
+                    cnt++;
+                }
+
+                one = max(one, cnt);
+            }
+        }
     }
+
+    ll x = pow(zero, 2);
+    ll y = pow(one, 2);
+
+    cout << max3(x, y, zero1 * one1) << endl;
 }
 int main()
 {
